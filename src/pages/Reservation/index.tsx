@@ -1,9 +1,10 @@
+import { ContentWrapper } from '@components/ContentWrapper';
 import React from 'react';
 
 export const Reservation = () => {
   return (
-    <div>
+    <ContentWrapper>
       <div>Reservation</div>
-    </div>
+    </ContentWrapper>
   );
 };

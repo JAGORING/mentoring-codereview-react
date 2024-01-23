@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 // components
-import DefaultLayout from '@components/Layout/DefaultLayout/DefaultLayout';
+import DefaultLayout from '@components/Layout/DefaultLayout';
 // pages
 import { Home } from '@pages/Home';
 import { Favorites } from '@pages/Favorites';
