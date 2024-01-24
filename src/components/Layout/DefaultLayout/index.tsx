@@ -1,11 +1,11 @@
-import { ContentWrapper } from '@components/ContentWrapper';
+import { Container } from '@components/Container';
 import { Outlet } from 'react-router-dom';
 
 export default function DefaultLayout() {
   return (
-    <ContentWrapper>
+    <Container>
       <Outlet />
       <>버튼 들어갈 자리</>
-    </ContentWrapper>
+    </Container>
   );
 }

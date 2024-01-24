@@ -1,4 +1,4 @@
-import { ContentWrapper } from '@components/ContentWrapper';
+import { Container } from '@components/Container';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,5 +8,5 @@ export const NotFound = () => {
   useEffect(() => {
     navigate('/');
   });
-  return <ContentWrapper>404 not found</ContentWrapper>;
+  return <Container>404 not found</Container>;
 };

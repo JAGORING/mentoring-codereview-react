@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ContentWrapper = ({ children }: { children: React.ReactNode }) => {
+export const Container = ({ children }: { children: React.ReactNode }) => {
   return <Wrapper>{children}</Wrapper>;
 };
 
