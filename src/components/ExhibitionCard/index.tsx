@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 
+import { useFavoriteActions, useFavoriteList } from '@src/store/favoriteStore';
+
 import StarOn from 'assets/icons/star-on.png';
 import StarOff from 'assets/icons/star-off.png';
 
 import { addCommasToNumber } from '@utils/formatter';
 
 export const ExhibitionCard = ({ exhibition }: { exhibition: Exhibition }) => {
+  const favoriteList = useFavoriteList();
+  const { addFavorite, deleteFavorite } = useFavoriteActions();
+
   return (
     <Card>
       <div className="card-wrap">
         <div className="card-img">
-          <img src={exhibition.imageUrl} />
+          <img src={exhibition.imageUrl} alt={exhibition.title} />
         </div>
         <div className="card-info-group">
           <div className="card-info">
@@ -19,8 +24,20 @@ export const ExhibitionCard = ({ exhibition }: { exhibition: Exhibition }) => {
               <div className="card-place">{exhibition.place}</div>
               <div className="card-price">{addCommasToNumber(exhibition.price)} 원</div>
             </div>
-            <div className="card-star">
-              <img src={StarOn} />
+            <div
+              className="card-star"
+              onClick={() => {
+                if (!favoriteList.includes(exhibition.id)) {
+                  addFavorite(exhibition.id);
+                } else {
+                  deleteFavorite(exhibition.id);
+                }
+              }}
+            >
+              <img
+                src={favoriteList.includes(exhibition.id) ? StarOn : StarOff}
+                alt="favorite Icon"
+              />
             </div>
           </div>
           <div className="card-bottom">
