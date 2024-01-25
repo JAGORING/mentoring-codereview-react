@@ -7,6 +7,7 @@ export const theme = {
     darkGray: '#999999',
     lightGrayText: '#AAAAAA',
     lightGrayButton: '#D9D9D9',
+    lightGrayBorder: '#F4F4F4',
     red: '#FF4800',
   },
 };
