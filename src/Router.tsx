@@ -19,7 +19,7 @@ function Router() {
       ],
     },
     {
-      path: '/reservation',
+      path: '/reservation/:exhibitionId',
       element: <Reservation />,
     },
     {
