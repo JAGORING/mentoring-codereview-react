@@ -43,7 +43,7 @@ const Nav = styled.div`
   position: fixed;
   bottom: 0;
   border-top: 0.5px solid ${({ theme }) => theme.color.lightGrayBorder};
-
+  background: ${({ theme }) => theme.color.white};
   button {
     width: 50%;
     display: flex;

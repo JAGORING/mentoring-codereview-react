@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { useRouter } from '@hooks/useRouter';
 import { useFavoriteActions, useFavoriteList } from '@src/store/favoriteStore';
 
 import StarOn from 'assets/icons/star-on.png';
@@ -7,7 +8,16 @@ import StarOff from 'assets/icons/star-off.png';
 
 import { addCommasToNumber } from '@utils/formatter';
 
-export const ExhibitionCard = ({ exhibition }: { exhibition: Exhibition }) => {
+export const ExhibitionCard = ({
+  exhibition,
+  layout = 'default',
+}: {
+  exhibition: Exhibition;
+  layout?: 'default' | 'reversed';
+}) => {
+  const router = useRouter();
+  const isReversedLayout = layout === 'reversed';
+
   const favoriteList = useFavoriteList();
   const { addFavorite, deleteFavorite } = useFavoriteActions();
 
@@ -40,11 +50,16 @@ export const ExhibitionCard = ({ exhibition }: { exhibition: Exhibition }) => {
               />
             </div>
           </div>
-          <div className="card-bottom">
+          <div className={`card-bottom ${isReversedLayout ? 'reversed' : ''}`}>
             <div className="card-date">
               {exhibition.date.started} ~ {exhibition.date.ended}
             </div>
-            <button className="card-btn">예매하기</button>
+            <button
+              className="card-btn"
+              onClick={() => router.push(`/reservation/${exhibition.id}`)}
+            >
+              예매하기
+            </button>
           </div>
         </div>
       </div>
@@ -109,6 +124,10 @@ const Card = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &.reversed {
+      flex-direction: row-reverse;
+    }
     .card-date {
       font-weight: 400;
       font-size: 8px;
