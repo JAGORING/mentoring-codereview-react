@@ -1,12 +1,13 @@
-import { Container } from '@components/Container';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import { Container } from '@components/Container';
+import { useRouter } from '@hooks/useRouter';
 
 export const NotFound = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
-    navigate('/');
+    router.push('/');
   });
   return <Container>404 not found</Container>;
 };
