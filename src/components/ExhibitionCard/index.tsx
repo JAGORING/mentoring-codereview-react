@@ -135,6 +135,7 @@ const Card = styled.div`
       color: ${({ theme }) => theme.color.lightBlack};
     }
     .card-btn {
+      padding: 5px;
       cursor: pointer;
       height: 16px;
       border-radius: 4px;
