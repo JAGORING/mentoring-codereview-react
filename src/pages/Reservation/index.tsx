@@ -9,8 +9,7 @@ import styled from 'styled-components';
 
 export const Reservation = () => {
   const { exhibitionId } = useParams();
-  const { exhibition, isLoading } = useGetExhibitionDetail(Number(exhibitionId));
-  if (isLoading) return <Container>LOADING</Container>;
+  const { exhibition } = useGetExhibitionDetail(Number(exhibitionId));
   return (
     <Container>
       <BackBtnHeader title="예매하기" />
@@ -22,7 +21,7 @@ export const Reservation = () => {
 
 const ReservationBtn = styled.button`
   display: block;
-  margin: 0 auto;
+  margin: 10px auto 0;
   cursor: pointer;
   width: 390px;
   height: 59px;

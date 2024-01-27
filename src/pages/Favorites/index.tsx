@@ -44,7 +44,7 @@ const ExhibitionList = styled.div<ExhibitionListProps>`
   ${(props) =>
     props.hasEmptyFavorites &&
     css`
-      height: calc(100vh - 100px);
+      height: calc(100vh - 79px);
     `}
 
   .empty-favorites {
