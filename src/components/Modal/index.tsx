@@ -73,8 +73,8 @@ export const Modal = Object.assign(ModalMain, {
 const ModalOveray = styled.div`
   width: 100vw;
   height: 100vh;
+  position: fixed;
   background: #00000080;
-  position: absolute;
   top: 0;
 `;
 
